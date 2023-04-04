@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
@@ -10,15 +11,8 @@ import static org.junit.Assert.*;
 
 public class EasySeleniumTest {
     public WebDriver driver = new ChromeDriver();
-//    String firstName = "Kontautas";
-//    String lastName = "Kontautaitis";
-//    String email = "saimis@pastas.com";
-//    String phoneNumber = "86494812";
-//    String address = "Makvyno gatve 12";
-//    String city = "Rumsiskes";
-//    String state = "Alaska";
-//    String zipCode = "4462";
-//    String projectDescription = "tratatattata";
+    private boolean isChecked;
+    private WebElement e;
     @Test
     public void firstNameFillTest() {
         driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/div/input")).sendKeys("Kontautas");
@@ -263,17 +257,12 @@ public class EasySeleniumTest {
         String style = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[11]/div/small[1]")).getAttribute("data-bv-result");
         assertTrue(style.contains("INVALID"));
     }
-    @Test
-    public void tickMarksTest(){
-
-    }
-
-
-
-
-
-
-
+//    @Test
+//    public void tickMarksTest(){
+//        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[10]/div/div[1]/label/input")).click();
+//        isChecked = e.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[10]/div/div[1]/label/input")).isSelected());
+//
+//    }
     @BeforeClass
     public void beforeClass() {
        // System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver111.exe");
