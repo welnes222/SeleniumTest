@@ -128,6 +128,109 @@ public class EasySeleniumTest {
         String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[11]/div/i")).getAttribute("class");
         assertTrue(tick.contains("glyphicon-ok"));
     }
+    @Test
+    public void failTickmarkFirstNameTest() {
+        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/div/input")).sendKeys(" ");
+        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/i")).getAttribute("class");
+        assertTrue(tick.contains("glyphicon-remove"));
+    }
+    @Test
+    public void failTickmarkLastNameTest() {
+        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[2]/div/div/input")).sendKeys(" ");
+        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[2]/div/i")).getAttribute("class");
+        assertTrue(tick.contains("glyphicon-remove"));
+    }
+    @Test
+    public void failEmailTickmarkTest() {
+        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[3]/div/div/input")).sendKeys(" ");
+        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[3]/div/i")).getAttribute("class");
+        assertTrue(tick.contains("glyphicon-remove"));
+    }
+    @Test
+    public void failPhoneTickmarkTest() {
+        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[4]/div/div/input")).sendKeys(" ");
+        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[4]/div/i")).getAttribute("class");
+        assertTrue(tick.contains("glyphicon-remove"));
+    }
+    @Test
+    public void failAddressTickmarkTest() {
+        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[5]/div/div/input")).sendKeys(" ");
+        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[5]/div/i")).getAttribute("class");
+        assertTrue(tick.contains("glyphicon-remove"));
+    }
+    @Test
+    public void failCityTickMarkTest() {
+        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[6]/div/div/input")).sendKeys(" ");
+        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[6]/div/i")).getAttribute("class");
+        assertTrue(tick.contains("glyphicon-remove"));
+    }
+    @Test
+    public void failZipCodeTickMarkTest() {
+        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[8]/div/div/input")).sendKeys(" ");
+        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[8]/div/i")).getAttribute("class");
+        assertTrue(tick.contains("glyphicon-remove"));
+    }
+    @Test
+    public void failProjectDescriptionTickMarkTest() {
+        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[11]/div/div/textarea")).sendKeys(" ");
+        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[11]/div/i")).getAttribute("class");
+        assertTrue(tick.contains("glyphicon-remove"));
+    }
+    @Test
+    public void EmptyFirstNameTest() {
+        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/div/input")).sendKeys("a  ");
+        String stl = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/small[1]")).getAttribute("style");
+        assertTrue(stl.contains("block"));
+    }
+//    @Test
+//    public void tickmarkLastNameTest() {
+//        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[2]/div/div/input")).sendKeys("Kontautaitis");
+//        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[2]/div/i")).getAttribute("class");
+//        assertTrue(tick.contains("glyphicon-ok"));
+//    }
+//    @Test
+//    public void emailTickmarkTest() {
+//        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[3]/div/div/input")).sendKeys("kontautas@pastas.com");
+//        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[3]/div/i")).getAttribute("class");
+//        assertTrue(tick.contains("glyphicon-ok"));
+//    }
+//    @Test
+//    public void phoneTickmarkTest() {
+//        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[4]/div/div/input")).sendKeys("869488741");
+//        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[4]/div/i")).getAttribute("class");
+//        assertTrue(tick.contains("glyphicon-ok"));
+//    }
+//    @Test
+//    public void addressTickmarkTest() {
+//        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[5]/div/div/input")).sendKeys("kontautu g.12");
+//        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[5]/div/i")).getAttribute("class");
+//        assertTrue(tick.contains("glyphicon-ok"));
+//    }
+//    @Test
+//    public void cityTickMarkTest() {
+//        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[6]/div/div/input")).sendKeys("Havana");
+//        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[6]/div/i")).getAttribute("class");
+//        assertTrue(tick.contains("glyphicon-ok"));
+//    }
+//    @Test
+//    public void stateTickMarkTest() {
+//        Select drpState = new Select(driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[7]/div/div/select")));
+//        drpState.selectByVisibleText("Kansas");
+//        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[7]/div/i")).getAttribute("class");
+//        assertTrue(tick.contains("glyphicon-ok"));
+//    }
+//    @Test
+//    public void zipCodeTickMarkTest() {
+//        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[8]/div/div/input")).sendKeys("4897");
+//        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[8]/div/i")).getAttribute("class");
+//        assertTrue(tick.contains("glyphicon-ok"));
+//    }
+//    @Test
+//    public void projectDescriptionTickMarkTest() {
+//        driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[11]/div/div/textarea")).sendKeys("pamparampamapam");
+//        String tick = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[11]/div/i")).getAttribute("class");
+//        assertTrue(tick.contains("glyphicon-ok"));
+//    }
     @BeforeClass
     public void beforeClass() {
        // System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver111.exe");
